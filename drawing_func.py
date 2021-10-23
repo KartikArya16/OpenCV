@@ -1,0 +1,20 @@
+import numpy as np
+import cv2
+img=np.zeros((512,512,3),dtype=np.uint8)
+cv2.imshow("image",img)
+cv2.waitKey()
+cv2.line(img,(0,0),(511,511),(110,50,50),5)
+cv2.imshow("image",img)
+cv2.waitKey()
+cv2.rectangle(img,(200,100),(400,350),(130,255,255),10)
+cv2.imshow("image",img)
+cv2.waitKey()
+pts=np.array([[10,15],[100,130],[70,20],[150,10]],np.int32)
+#pts=pts.reshape((1,1,2))
+cv2.polylines(img,[pts],True,(0,255,255))
+cv2.imshow("image",img)
+cv2.waitKey()
+font=cv2.FONT_HERSHEY_SIMPLEX
+cv2.putText(img,'OpenCV',(10,500),font, 4,(255,255,0),2,cv2.LINE_AA)
+cv2.imshow("image",img)
+cv2.waitKey()
